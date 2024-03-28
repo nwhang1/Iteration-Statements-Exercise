@@ -8,11 +8,11 @@
         //Write a method that will print to the console numbers 3 through 999 by 3 each time
 
         //Write a method to accept two integers as parameterss and check whether they are equal or not
-        
+
         //Write a method to check whether a given number is even or odd
-        
+
         //Write a method to check whether a given number is positive or negative
-        
+
         //Write a method to read the age of a candidate and determine whether they can vote.
         //Hint: Use Parse or the safer TryParse() for an extra challenge
         //Parse()
@@ -20,19 +20,19 @@
 
         //Heatin Up Section:
         //Write a method to check if an integer(from the user) is in the range -10 to 10
-        
+
         //Write a method to display the multiplication table(from 1 to 12) of a given integer
 
 
         //Call the methods to test them in the Main method below
         static void Main(string[] args)
         {
-            for(int i = -1000; i < 1000; i++)
+            for (int i = -1000; i < 1000; i++)
             {
                 Console.WriteLine($"{i}");
             }
 
-            for(int i = 3; i <= 999; i += 3)
+            for (int i = 3; i <= 999; i += 3)
             {
                 Console.WriteLine($"{i}");
             }
@@ -43,53 +43,25 @@
             Console.WriteLine("What's the second number?");
             int num2 = int.Parse(Console.ReadLine());
 
-            if (num1 == num2)
-            {
-                Console.WriteLine("Yes, these are equal");
-            }
-            else
-            {
-                Console.WriteLine("No, these are not equal");
-            }
-            
+            Console.WriteLine($"Is {num1} equal to {num2}? {IsEqual(num1, num2)}");
+
             // Even Odd Method
             Console.WriteLine("Let's check if the number is even or odd, what's the number you want to check?");
             int num3 = int.Parse(Console.ReadLine());
-            
-            if (num3 % 2 == 0)
-            {
-                Console.WriteLine("This is an even number");
-            }
-            else
-            {
-                Console.WriteLine("This is an odd number");
-            }
+
+            Console.WriteLine($"Is {num3} Even? {IsEvenOrOdd(num3)}");
 
             // Positive or negative method
             Console.WriteLine("Let's check if the number is positive or negative, what's the number you want to check?");
             int num4 = int.Parse(Console.ReadLine());
 
-            if (num4 > 0)
-            {
-                Console.WriteLine("It's positive");
-            }
-            else
-            {
-                Console.WriteLine("It's negative");
-            }
-     
+            PositiveNegative(num4);
+
             // Voting Method
             Console.WriteLine("Voting season is coming up, how old are you?");
             int age = int.Parse(Console.ReadLine());
-            
-            if (age > 18)
-            {
-                Console.WriteLine("Pokemon Go to the polls!");
-            }
-            else
-            {
-                Console.WriteLine("You can't vote, bummer");
-            }
+
+            VotingAge(age);
 
             // Range Method
             Console.WriteLine("Give me a number");
@@ -105,6 +77,44 @@
             MultiplicationTable(num6);
         }
 
+        // Equality method
+        static bool IsEqual(int num1, int num2)
+        {
+            return num1 == num2;
+        }
+
+        // Even Odd Method
+
+        static bool IsEvenOrOdd(int num3)
+        {
+            return num3 % 2 == 0;
+        }
+
+        // Positive or Negative Method
+        static void PositiveNegative(int num4)
+        {
+            if (num4 > 0)
+            {
+                Console.WriteLine("It's positive");
+            }
+            else
+            {
+                Console.WriteLine("It's negative");
+            }
+        }
+
+        // Voting Method
+        static void VotingAge(int age)
+        {
+            if (age > 18)
+            {
+                Console.WriteLine("Pokemon Go to the polls!");
+            }
+            else
+            {
+                Console.WriteLine("You can't vote, bummer");
+            }
+        }
         // Range method
         static bool IsInRange(int num5)
         {
